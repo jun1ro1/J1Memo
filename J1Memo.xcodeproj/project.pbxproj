@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9DBCB55141C6E050099D089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB54141C6E050099D089 /* UIKit.framework */; };
+		F9DBCB57141C6E050099D089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB56141C6E050099D089 /* Foundation.framework */; };
+		F9DBCB59141C6E050099D089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB58141C6E050099D089 /* CoreGraphics.framework */; };
+		F9DBCB5B141C6E050099D089 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB5A141C6E050099D089 /* CoreData.framework */; };
+		F9DBCB61141C6E050099D089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB5F141C6E050099D089 /* InfoPlist.strings */; };
+		F9DBCB63141C6E050099D089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB62141C6E050099D089 /* main.m */; };
+		F9DBCB67141C6E050099D089 /* J1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB66141C6E050099D089 /* J1AppDelegate.m */; };
+		F9DBCB6A141C6E050099D089 /* J1Memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB68141C6E050099D089 /* J1Memo.xcdatamodeld */; };
+		F9DBCB6D141C6E050099D089 /* J1MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */; };
+		F9DBCB70141C6E050099D089 /* J1DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */; };
+		F9DBCB73141C6E050099D089 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB71141C6E050099D089 /* MainStoryboard_iPhone.storyboard */; };
+		F9DBCB76141C6E050099D089 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */; };
+		F9DBCB7E141C6E050099D089 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB7D141C6E050099D089 /* SenTestingKit.framework */; };
+		F9DBCB7F141C6E060099D089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB54141C6E050099D089 /* UIKit.framework */; };
+		F9DBCB80141C6E060099D089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB56141C6E050099D089 /* Foundation.framework */; };
+		F9DBCB81141C6E060099D089 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB5A141C6E050099D089 /* CoreData.framework */; };
+		F9DBCB89141C6E060099D089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB87141C6E060099D089 /* InfoPlist.strings */; };
+		F9DBCB8C141C6E060099D089 /* J1MemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB8B141C6E060099D089 /* J1MemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9DBCB82141C6E060099D089 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9DBCB47141C6E050099D089 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9DBCB4F141C6E050099D089;
+			remoteInfo = J1Memo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F9DBCB50141C6E050099D089 /* J1Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = J1Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DBCB54141C6E050099D089 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F9DBCB56141C6E050099D089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9DBCB58141C6E050099D089 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F9DBCB5A141C6E050099D089 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F9DBCB5E141C6E050099D089 /* J1Memo-Info.plist */ = {isa = PBXFileReference; path = "J1Memo-Info.plist"; sourceTree = "<group>"; };
+		F9DBCB60141C6E050099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9DBCB62141C6E050099D089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9DBCB64141C6E050099D089 /* J1Memo-Prefix.pch */ = {isa = PBXFileReference; path = "J1Memo-Prefix.pch"; sourceTree = "<group>"; };
+		F9DBCB65141C6E050099D089 /* J1AppDelegate.h */ = {isa = PBXFileReference; path = J1AppDelegate.h; sourceTree = "<group>"; };
+		F9DBCB66141C6E050099D089 /* J1AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1AppDelegate.m; sourceTree = "<group>"; };
+		F9DBCB69141C6E050099D089 /* J1Memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = J1Memo.xcdatamodel; sourceTree = "<group>"; };
+		F9DBCB6B141C6E050099D089 /* J1MasterViewController.h */ = {isa = PBXFileReference; path = J1MasterViewController.h; sourceTree = "<group>"; };
+		F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1MasterViewController.m; sourceTree = "<group>"; };
+		F9DBCB6E141C6E050099D089 /* J1DetailViewController.h */ = {isa = PBXFileReference; path = J1DetailViewController.h; sourceTree = "<group>"; };
+		F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1DetailViewController.m; sourceTree = "<group>"; };
+		F9DBCB72141C6E050099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F9DBCB75141C6E050099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F9DBCB7C141C6E050099D089 /* J1MemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = J1MemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DBCB7D141C6E050099D089 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F9DBCB86141C6E060099D089 /* J1MemoTests-Info.plist */ = {isa = PBXFileReference; path = "J1MemoTests-Info.plist"; sourceTree = "<group>"; };
+		F9DBCB88141C6E060099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9DBCB8A141C6E060099D089 /* J1MemoTests.h */ = {isa = PBXFileReference; path = J1MemoTests.h; sourceTree = "<group>"; };
+		F9DBCB8B141C6E060099D089 /* J1MemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1MemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9DBCB4D141C6E050099D089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBCB55141C6E050099D089 /* UIKit.framework in Frameworks */,
+				F9DBCB57141C6E050099D089 /* Foundation.framework in Frameworks */,
+				F9DBCB59141C6E050099D089 /* CoreGraphics.framework in Frameworks */,
+				F9DBCB5B141C6E050099D089 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DBCB78141C6E050099D089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBCB7E141C6E050099D089 /* SenTestingKit.framework in Frameworks */,
+				F9DBCB7F141C6E060099D089 /* UIKit.framework in Frameworks */,
+				F9DBCB80141C6E060099D089 /* Foundation.framework in Frameworks */,
+				F9DBCB81141C6E060099D089 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9DBCB45141C6E050099D089 = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB5C141C6E050099D089 /* J1Memo */,
+				F9DBCB84141C6E060099D089 /* J1MemoTests */,
+				F9DBCB53141C6E050099D089 /* Frameworks */,
+				F9DBCB51141C6E050099D089 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9DBCB51141C6E050099D089 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB50141C6E050099D089 /* J1Memo.app */,
+				F9DBCB7C141C6E050099D089 /* J1MemoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9DBCB53141C6E050099D089 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB54141C6E050099D089 /* UIKit.framework */,
+				F9DBCB56141C6E050099D089 /* Foundation.framework */,
+				F9DBCB58141C6E050099D089 /* CoreGraphics.framework */,
+				F9DBCB5A141C6E050099D089 /* CoreData.framework */,
+				F9DBCB7D141C6E050099D089 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9DBCB5C141C6E050099D089 /* J1Memo */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB65141C6E050099D089 /* J1AppDelegate.h */,
+				F9DBCB66141C6E050099D089 /* J1AppDelegate.m */,
+				F9DBCB6B141C6E050099D089 /* J1MasterViewController.h */,
+				F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */,
+				F9DBCB6E141C6E050099D089 /* J1DetailViewController.h */,
+				F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */,
+				F9DBCB71141C6E050099D089 /* MainStoryboard_iPhone.storyboard */,
+				F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */,
+				F9DBCB68141C6E050099D089 /* J1Memo.xcdatamodeld */,
+				F9DBCB5D141C6E050099D089 /* Supporting Files */,
+			);
+			path = J1Memo;
+			sourceTree = "<group>";
+		};
+		F9DBCB5D141C6E050099D089 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB5E141C6E050099D089 /* J1Memo-Info.plist */,
+				F9DBCB5F141C6E050099D089 /* InfoPlist.strings */,
+				F9DBCB62141C6E050099D089 /* main.m */,
+				F9DBCB64141C6E050099D089 /* J1Memo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9DBCB84141C6E060099D089 /* J1MemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB8A141C6E060099D089 /* J1MemoTests.h */,
+				F9DBCB8B141C6E060099D089 /* J1MemoTests.m */,
+				F9DBCB85141C6E060099D089 /* Supporting Files */,
+			);
+			path = J1MemoTests;
+			sourceTree = "<group>";
+		};
+		F9DBCB85141C6E060099D089 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB86141C6E060099D089 /* J1MemoTests-Info.plist */,
+				F9DBCB87141C6E060099D089 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9DBCB4F141C6E050099D089 /* J1Memo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9DBCB8F141C6E060099D089 /* Build configuration list for PBXNativeTarget "J1Memo" */;
+			buildPhases = (
+				F9DBCB4C141C6E050099D089 /* Sources */,
+				F9DBCB4D141C6E050099D089 /* Frameworks */,
+				F9DBCB4E141C6E050099D089 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = J1Memo;
+			productName = J1Memo;
+			productReference = F9DBCB50141C6E050099D089 /* J1Memo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9DBCB7B141C6E050099D089 /* J1MemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9DBCB92141C6E060099D089 /* Build configuration list for PBXNativeTarget "J1MemoTests" */;
+			buildPhases = (
+				F9DBCB77141C6E050099D089 /* Sources */,
+				F9DBCB78141C6E050099D089 /* Frameworks */,
+				F9DBCB79141C6E050099D089 /* Resources */,
+				F9DBCB7A141C6E050099D089 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9DBCB83141C6E060099D089 /* PBXTargetDependency */,
+			);
+			name = J1MemoTests;
+			productName = J1MemoTests;
+			productReference = F9DBCB7C141C6E050099D089 /* J1MemoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9DBCB47141C6E050099D089 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F9DBCB4A141C6E050099D089 /* Build configuration list for PBXProject "J1Memo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F9DBCB45141C6E050099D089;
+			productRefGroup = F9DBCB51141C6E050099D089 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9DBCB4F141C6E050099D089 /* J1Memo */,
+				F9DBCB7B141C6E050099D089 /* J1MemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9DBCB4E141C6E050099D089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBCB61141C6E050099D089 /* InfoPlist.strings in Resources */,
+				F9DBCB73141C6E050099D089 /* MainStoryboard_iPhone.storyboard in Resources */,
+				F9DBCB76141C6E050099D089 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DBCB79141C6E050099D089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBCB89141C6E060099D089 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F9DBCB7A141C6E050099D089 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9DBCB4C141C6E050099D089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBCB63141C6E050099D089 /* main.m in Sources */,
+				F9DBCB67141C6E050099D089 /* J1AppDelegate.m in Sources */,
+				F9DBCB6A141C6E050099D089 /* J1Memo.xcdatamodeld in Sources */,
+				F9DBCB6D141C6E050099D089 /* J1MasterViewController.m in Sources */,
+				F9DBCB70141C6E050099D089 /* J1DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DBCB77141C6E050099D089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBCB8C141C6E060099D089 /* J1MemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9DBCB83141C6E060099D089 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9DBCB4F141C6E050099D089 /* J1Memo */;
+			targetProxy = F9DBCB82141C6E060099D089 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F9DBCB5F141C6E050099D089 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9DBCB60141C6E050099D089 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9DBCB71141C6E050099D089 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9DBCB72141C6E050099D089 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9DBCB75141C6E050099D089 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F9DBCB87141C6E060099D089 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9DBCB88141C6E060099D089 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9DBCB8D141C6E060099D089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9DBCB8E141C6E060099D089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9DBCB90141C6E060099D089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
+				INFOPLIST_FILE = "J1Memo/J1Memo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F9DBCB91141C6E060099D089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
+				INFOPLIST_FILE = "J1Memo/J1Memo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F9DBCB93141C6E060099D089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/J1Memo.app/J1Memo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
+				INFOPLIST_FILE = "J1MemoTests/J1MemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F9DBCB94141C6E060099D089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/J1Memo.app/J1Memo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
+				INFOPLIST_FILE = "J1MemoTests/J1MemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9DBCB4A141C6E050099D089 /* Build configuration list for PBXProject "J1Memo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DBCB8D141C6E060099D089 /* Debug */,
+				F9DBCB8E141C6E060099D089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9DBCB8F141C6E060099D089 /* Build configuration list for PBXNativeTarget "J1Memo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DBCB90141C6E060099D089 /* Debug */,
+				F9DBCB91141C6E060099D089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F9DBCB92141C6E060099D089 /* Build configuration list for PBXNativeTarget "J1MemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DBCB93141C6E060099D089 /* Debug */,
+				F9DBCB94141C6E060099D089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9DBCB68141C6E050099D089 /* J1Memo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9DBCB69141C6E050099D089 /* J1Memo.xcdatamodel */,
+			);
+			currentVersion = F9DBCB69141C6E050099D089 /* J1Memo.xcdatamodel */;
+			path = J1Memo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F9DBCB47141C6E050099D089 /* Project object */;
+}
