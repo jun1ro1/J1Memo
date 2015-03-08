@@ -28,7 +28,11 @@
 - (void)awakeFromNib
 {
     self.splitViewController.delegate = self;
-    self.hidesBottomBarWhenPushed = YES;
+}
+
+- (void)viewDidLoad
+{
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)viewDidUnload

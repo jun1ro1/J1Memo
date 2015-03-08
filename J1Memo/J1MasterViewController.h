@@ -7,16 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "Group.h"
 
-@class J1DetailViewController;
+@class EditViewController;
 
-@interface J1MasterViewController : UITableViewController
+@interface J1MasterViewController : UIViewController
+    <UITableViewDelegate, UITableViewDataSource,
+    NSFetchedResultsControllerDelegate>
+{
+    // User interface
+    IBOutlet UITableView			*tableView_;
+    UIBarButtonItem                 *composeButton_;
+}
 
-@property (strong, nonatomic) J1DetailViewController *detailViewController;
-@property (nonatomic) BOOL useiCloud;
-@property (strong, nonatomic) NSMutableArray *documentURLs;
-@property (strong, nonatomic) NSMetadataQuery *query;
+@property (strong, nonatomic) EditViewController *detailViewController;
 
-- (IBAction)addDocument:(id)sender;
+@property (nonatomic, strong) NSFetchedResultsController    *fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext        *managedObjectContext;
+
+- (void)compose:(id)sender;
+
+
+
+//@property (nonatomic) BOOL useiCloud;
+//@property (strong, nonatomic) NSMutableArray *documentURLs;
+//@property (strong, nonatomic) NSMetadataQuery *query;
+
+// - (IBAction)addDocument:(id)sender;
 
 @end

@@ -1,3 +1,4 @@
+
 //
 //  J1MasterViewController.m
 //  J1Memo
@@ -7,27 +8,44 @@
 //
 
 #import "J1MasterViewController.h"
-
 #import "J1DetailViewController.h"
+#import "J1GroupManager.h"
+#import "J1CoreDataManager.h"
+#import "RootViewController.h"
+#import "PropertyViewController.h"
+#import "MemoListViewController.h"
+#import "GroupEditViewController.h"
+#import "J1MemoManager.h"
+#import "EditViewController.h"
+
+const int kSpecialSection = 0;
+static J1GroupManager *sGroupManager = nil;
 
 @interface J1MasterViewController ()
-- (NSURL *)localDocumentsURL;
-- (NSURL *)ubiquitousDocumentsURL;
+//- (NSURL *)localDocumentsURL;
+//- (NSURL *)ubiquitousDocumentsURL;
 
-- (UIView *)cloudToolbarView;
+//- (UIView *)cloudToolbarView;
 
-- (void)showDocument:(UIManagedDocument *)document;
+//- (void)showDocument:(UIManagedDocument *)document;
 
-- (void)addDocumentURL:(NSURL *)url;
-- (void)removeDocumentURL:(NSURL *)url;
+//- (void)addDocumentURL:(NSURL *)url;
+//- (void)removeDocumentURL:(NSURL *)url;
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation J1MasterViewController
 
-@synthesize detailViewController = _detailViewController;
-@synthesize useiCloud = _useiCloud;
-@synthesize documentURLs = _documentURLs;
-@synthesize query = _query;
+@synthesize detailViewController = detailViewController_;
+
+//@synthesize useiCloud = _useiCloud;
+//@synthesize documentURLs = _documentURLs;
+//@synthesize query = _query;
+
+@synthesize fetchedResultsController=__fetchedResultsController;
+@synthesize managedObjectContext=__managedObjectContext;
+
 
 - (void)dealloc
 {
@@ -40,15 +58,19 @@ static NSString * const UseiCloudKey = @"UseiCloud";
 
 - (void)awakeFromNib
 {
-    _useiCloud = [[NSUserDefaults standardUserDefaults] boolForKey:UseiCloudKey];
+//    _useiCloud = [[NSUserDefaults standardUserDefaults] boolForKey:UseiCloudKey];
     
-    self.clearsSelectionOnViewWillAppear = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone);
+//    self.clearsSelectionOnViewWillAppear = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone);
+
+    
+/*
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithCustomView:[self cloudToolbarView]];
     UIBarButtonItem *item3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
     self.toolbarItems = [NSArray arrayWithObjects:item1, item2, item3, nil];
-    
+*/
+/*
     NSURL *ubiquitousDocumentsURL = [self ubiquitousDocumentsURL];
     if (ubiquitousDocumentsURL) {
         NSMetadataQuery *query = [[NSMetadataQuery alloc] init];
@@ -59,36 +81,104 @@ static NSString * const UseiCloudKey = @"UseiCloud";
         [query startQuery];
         self.query = query;
     }
-}
+*/
+ }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+
+    sGroupManager = [J1GroupManager sharedManager];
+    self.managedObjectContext = [J1CoreDataManager sharedManager].managedObjectContext;
+    
+    // Get the last memo.
+    
+	
+    // Create a new meo
+//    Memo *newManagedObject = [[J1MemoManager sharedManager] insertNewObject:[J1GroupManager sharedOthersGroup]];
+
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"Group";
+    
+    
+    
+    // Get the EditViewController
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.detailViewController = (J1DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-        
+        self.detailViewController = (EditViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+
+        // Assign a new object to edit first
+//        self.detailViewController.editingMemo = newManagedObject;
+    }
+
+/* 
         if (self.documentURLs.count > 0) {
             NSURL *url = [self.documentURLs objectAtIndex:0];
             UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
             [self showDocument:document];
-            [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+            [tableView_ selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
         }
     }
+*/
+    
+    // Set up a toolbar.
+    UIBarButtonItem *spacer1
+    = [[UIBarButtonItem alloc]
+       initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+       target:nil action:nil];
+    
+    composeButton_
+    = [[UIBarButtonItem alloc]
+       initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+       target:self
+       action:@selector(compose:)];
+    composeButton_.style = UIBarButtonItemStylePlain;
+    
+    NSArray *items = [[NSArray alloc] initWithObjects:spacer1, composeButton_, nil];
+    
+    self.navigationController.toolbarHidden = NO;
+    [self setToolbarItems:items animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
+{ 
     [super viewWillAppear:animated];
-    [self.query enableUpdates];
-    [self.navigationController setToolbarHidden:NO animated:NO];
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+    
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+    
+//   [self.query enableUpdates];
+   [self.navigationController setToolbarHidden:NO animated:NO];
+   [tableView_ deselectRowAtIndexPath:[tableView_ indexPathForSelectedRow] animated:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    [self.query disableUpdates];
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+//    [self.query disableUpdates];
 }
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -100,40 +190,157 @@ static NSString * const UseiCloudKey = @"UseiCloud";
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)viewDidUnload
 {
-    return self.documentURLs.count;
+    [super viewDidUnload];
+    
+    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+    // For example: self.myOutlet = nil;
 }
 
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super	setEditing:editing animated:YES];
+	NSLog(@"%@.%s editing=%@", [self class], sel_getName(_cmd), ( editing ? @"YES" : @"NO" ) );
+	
+	[tableView_ setEditing:editing animated:YES];
+	
+	// rewrite All Group
+	NSIndexPath *indexPath = nil;
+	indexPath = [NSIndexPath indexPathForRow:0 inSection:kSpecialSection];
+	[tableView_ reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	// rewrite Unsorted Group
+	indexPath = [NSIndexPath indexPathForRow:1 inSection:kSpecialSection];
+	[tableView_ reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	
+	if (editing) {
+		[sGroupManager showNewGroup];
+	}
+	else {
+		[sGroupManager hideNewGroup];
+	}
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Relinquish ownership any cached data, images, etc that aren't in use.
+}
+
+
+#pragma mark - configure cell
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Group *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+	// Configure the textLabel of the cell.	
+	cell.textLabel.text	= managedObject.name;
+	
+	// Configure the number of the cell, and the accesarry
+	switch ([managedObject.type intValue]) {
+        case kAllGroup:
+            cell.detailTextLabel.text   = @"";
+            cell.accessoryType          = UITableViewCellAccessoryDisclosureIndicator;
+            cell.editingAccessoryType   = UITableViewCellAccessoryNone;
+            break;
+        case kOthersGroup:
+            cell.detailTextLabel.text   = [NSString stringWithFormat:@"%d", [managedObject.memos count]];
+            cell.accessoryType          = UITableViewCellAccessoryDisclosureIndicator;
+            cell.editingAccessoryType   = UITableViewCellAccessoryNone;
+            break;
+		case kUserGGoup:
+			cell.detailTextLabel.text   = [NSString stringWithFormat:@"%d", [managedObject.memos count]];
+            cell.accessoryType          = UITableViewCellAccessoryDisclosureIndicator;
+            cell.editingAccessoryType	= UITableViewCellAccessoryDetailDisclosureButton;
+			break;
+		case kNewGroup:
+			cell.detailTextLabel.text   = nil;
+            cell.accessoryType			= UITableViewCellAccessoryNone;			
+            cell.editingAccessoryType	= UITableViewCellAccessoryNone;
+			break;
+		case kTrashGroup:
+			cell.detailTextLabel.text   = [NSString stringWithFormat:@"%d", [managedObject.memos count]];
+            cell.accessoryType          = UITableViewCellAccessoryDisclosureIndicator;
+            cell.editingAccessoryType   = UITableViewCellAccessoryNone;
+			break;
+		default:
+			cell.detailTextLabel.text   = nil;
+            cell.accessoryType          = UITableViewCellAccessoryNone;
+            cell.editingAccessoryType   = UITableViewCellAccessoryNone;
+			break;
+	}
+}
+
+
+#pragma mark - Table View Datasource Interface
+// Customize the number of sections in the table view.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[self.fetchedResultsController sections] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+
+// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"RootView";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
-    NSURL *url = [self.documentURLs objectAtIndex:indexPath.row];
-    cell.textLabel.text = [[url lastPathComponent] stringByDeletingPathExtension];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+//    }
+    
+    // Configure the cell.
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSURL *url = [self.documentURLs objectAtIndex:indexPath.row];
-        UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
-        [self showDocument:document];
-    }
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	Group *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	if (self.editing && [managedObject.type intValue] == kNewGroup) {
+		return UITableViewCellEditingStyleInsert;
+	}
+	else {
+		return UITableViewCellEditingStyleDelete;
+	}
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[segue identifier] isEqualToString:@"showDocument"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSURL *url = [self.documentURLs objectAtIndex:indexPath.row];
-        UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
-        [[segue destinationViewController] setDocument:document];
-    }
+    // Return NO if you do not want the specified item to be editable.
+	Group *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	return  [managedObject.section intValue] == 1;
 }
 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        // Delete the managed object for the given index path
+        [[J1GroupManager sharedManager] deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        [[J1CoreDataManager sharedManager] saveContext];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+		Group *newManagedObject = [[J1GroupManager sharedManager] insertNewObject];
+		
+		GroupEditViewController *viewController = [[GroupEditViewController alloc] initWithNibName:@"GroupEditViewController" bundle:nil];
+		viewController.editingGroup = newManagedObject;
+		[self.navigationController pushViewController:viewController animated:YES];
+		
+		[tableView_ reloadData];
+	}
+}
+
+/*
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -150,9 +357,70 @@ static NSString * const UseiCloudKey = @"UseiCloud";
         [self removeDocumentURL:url];
     }
 }
+*/
+
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // The table view should not be re-orderable.
+    return NO;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+
+    if ([segue.identifier isEqualToString:@"MemoListView"]) {
+        [segue.destinationViewController setSelectedGroup:[self.fetchedResultsController objectAtIndexPath:tableView_.indexPathForSelectedRow]];
+        [segue.destinationViewController setDetailViewController:self.detailViewController];
+    }
+    else if ([segue.identifier isEqualToString:@"PropertyView"]) {
+        [segue.destinationViewController setSelectedObjects:sender];
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+    
+//    MemoListViewController *detailViewController = [[MemoListViewController alloc] initWithNibName:@"MemoListViewController" bundle:nil];
+    // ...
+    // Pass the selected object to the new view controller.
+//    detailViewController.selectedGroup = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"%@.%s", [self class], sel_getName(_cmd));
+
+/*    
+    // https://devforums.apple.com/message/466234#466234
+	NSManagedObject *selectedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"PropertyView" sender:selectedObject];
+*/	
+    GroupEditViewController *viewController = [[GroupEditViewController alloc] initWithNibName:@"GroupEditViewController" bundle:nil];
+	viewController.editingGroup = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+	[self.navigationController pushViewController:viewController animated:YES];
+    
+}
+
+-(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // prevent to display "New Group..." cell when swiped
+    
+}
+
+-(void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // prevent to display "New Group..." cell when swiped
+}
+
 
 #pragma mark - iCloud
-
+/*
 - (void)setUseiCloud:(BOOL)value
 {
     if (_useiCloud != value) {
@@ -172,7 +440,9 @@ static NSString * const UseiCloudKey = @"UseiCloud";
 {
     self.useiCloud = [sender isOn];
 }
+*/
 
+/*
 - (UIView *)cloudToolbarView
 {
     BOOL hasiCloud = ([self ubiquitousDocumentsURL] != nil);
@@ -190,24 +460,15 @@ static NSString * const UseiCloudKey = @"UseiCloud";
     [cloudView addSubview:cloudSwitch];
     return cloudView;
 }
+ */
 
 #pragma mark - Documents
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated
-{
-    [super setEditing:editing animated:animated];
-    NSURL *documentURL = self.detailViewController.document.fileURL;
-    if (documentURL) {
-        NSUInteger row = [self.documentURLs indexOfObject:documentURL];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-        [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:UITableViewScrollPositionNone];
-    }
-}
-
+/*
 - (void)updateUbiquitousDocuments:(NSNotification *)notification
 {
     self.documentURLs = nil;
-    [self.tableView reloadData];
+    [tableView_ reloadData];
 }
 
 - (void)showDocument:(UIManagedDocument *)document
@@ -267,9 +528,10 @@ static NSString * const UseiCloudKey = @"UseiCloud";
         [self showDocument:document];
     }
 }
+*/
 
 #pragma mark - Document URLs
-
+/*
 - (NSURL *)localDocumentsURL
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -321,4 +583,141 @@ static NSString * const UseiCloudKey = @"UseiCloud";
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+*/
+
+#pragma mark - Toolbar buttons
+
+- (void)compose:(id)sender
+{
+    Memo *newManagedObject = [[J1MemoManager sharedManager] insertNewObject:[J1GroupManager sharedOthersGroup]];
+    
+    EditViewController *detailViewController = [[EditViewController alloc] initWithNibName:@"EditViewController" bundle:nil];
+    detailViewController.editingMemo = newManagedObject;
+    [detailViewController setEditing:YES animated:NO];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (__fetchedResultsController != nil)
+    {
+        return __fetchedResultsController;
+    }
+    
+    /*
+     Set up the fetched results controller.
+     */
+    // Create the fetch request for the entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Group" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+	NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"section" ascending:YES];
+	NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"type"    ascending:YES];
+	NSSortDescriptor *sortDescriptor3 = [[NSSortDescriptor alloc] initWithKey:@"name"    ascending:YES];
+	NSArray *sortDescriptors		  = [[NSArray alloc] initWithObjects:sortDescriptor1, sortDescriptor2, sortDescriptor3, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController
+    = [[NSFetchedResultsController alloc]
+       initWithFetchRequest:fetchRequest
+       managedObjectContext:self.managedObjectContext
+       sectionNameKeyPath:@"section"
+       cacheName:[[self class] description]];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error])
+    {
+	    /*
+	     Replace this implementation with code to handle the error appropriately.
+         
+	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+	     */
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return __fetchedResultsController;
+}    
+
+#pragma mark - Fetched results controller delegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [tableView_ beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type)
+    {
+        case NSFetchedResultsChangeInsert:
+            [tableView_ insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView_ deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = tableView_;
+    
+    switch(type)
+    {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [tableView_ endUpdates];
+}
+
+/*
+ // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
+ 
+ - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+ {
+ // In the simplest, most efficient, case, reload the table view.
+ [myTableView reloadData];
+ }
+ */
+
 @end

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F92095E9160DF1F600295AB8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F92095E8160DF1F600295AB8 /* Default-568h@2x.png */; };
+		F924043F1699059900B813BC /* J1Memo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = F924043E1699059900B813BC /* J1Memo.entitlements */; };
+		F92404401699059900B813BC /* J1Memo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = F924043E1699059900B813BC /* J1Memo.entitlements */; };
+		F9A6939F1426FB9A00D62412 /* GroupEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A6939E1426FB9A00D62412 /* GroupEditViewController.xib */; };
+		F9C3688F145C4BD6002C2FBE /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D71B361453177000D8073E /* EditViewController.xib */; };
+		F9C3C77A145B9F0500D1C508 /* J1TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C3C778145B9F0500D1C508 /* J1TextViewController.m */; };
+		F9C3C77B145B9F0500D1C508 /* J1TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C3C779145B9F0500D1C508 /* J1TextViewController.xib */; };
+		F9C670DB14210F0300155C4B /* J1CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C670DA14210F0300155C4B /* J1CoreDataManager.m */; };
+		F9D71B3A14531A9B00D8073E /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D71B3914531A9B00D8073E /* EditViewController.m */; };
 		F9DBCB55141C6E050099D089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB54141C6E050099D089 /* UIKit.framework */; };
 		F9DBCB57141C6E050099D089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB56141C6E050099D089 /* Foundation.framework */; };
 		F9DBCB59141C6E050099D089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB58141C6E050099D089 /* CoreGraphics.framework */; };
@@ -14,9 +23,7 @@
 		F9DBCB61141C6E050099D089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB5F141C6E050099D089 /* InfoPlist.strings */; };
 		F9DBCB63141C6E050099D089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB62141C6E050099D089 /* main.m */; };
 		F9DBCB67141C6E050099D089 /* J1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB66141C6E050099D089 /* J1AppDelegate.m */; };
-		F9DBCB6A141C6E050099D089 /* J1Memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB68141C6E050099D089 /* J1Memo.xcdatamodeld */; };
 		F9DBCB6D141C6E050099D089 /* J1MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */; };
-		F9DBCB70141C6E050099D089 /* J1DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */; };
 		F9DBCB73141C6E050099D089 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB71141C6E050099D089 /* MainStoryboard_iPhone.storyboard */; };
 		F9DBCB76141C6E050099D089 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */; };
 		F9DBCB7E141C6E050099D089 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB7D141C6E050099D089 /* SenTestingKit.framework */; };
@@ -25,6 +32,19 @@
 		F9DBCB81141C6E060099D089 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9DBCB5A141C6E050099D089 /* CoreData.framework */; };
 		F9DBCB89141C6E060099D089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCB87141C6E060099D089 /* InfoPlist.strings */; };
 		F9DBCB8C141C6E060099D089 /* J1MemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB8B141C6E060099D089 /* J1MemoTests.m */; };
+		F9DBCBA0141C70810099D089 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB9B141C70810099D089 /* Group.m */; };
+		F9DBCBA1141C70810099D089 /* J1MemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB9D141C70810099D089 /* J1MemoManager.m */; };
+		F9DBCBA2141C70810099D089 /* Memo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCB9F141C70810099D089 /* Memo.m */; };
+		F9DBCBBB141C70D50099D089 /* J1TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCBAC141C70D50099D089 /* J1TextView.m */; };
+		F9DBCBBC141C70D50099D089 /* MemoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCBAE141C70D50099D089 /* MemoListViewController.m */; };
+		F9DBCBBD141C70D50099D089 /* MemoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCBAF141C70D50099D089 /* MemoListViewController.xib */; };
+		F9DBCBBE141C70D50099D089 /* OrganizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCBB2141C70D50099D089 /* OrganizeViewController.m */; };
+		F9DBCBBF141C70D50099D089 /* OrganizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DBCBB3141C70D50099D089 /* OrganizeViewController.xib */; };
+		F9DBCBC0141C70D50099D089 /* PropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBCBB5141C70D50099D089 /* PropertyViewController.m */; };
+		F9DC793F1436BEAF000A2C60 /* PropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC793E1436BEAF000A2C60 /* PropertyViewController.xib */; };
+		F9E2BFF2155DE877001FD6CF /* J1Memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9E2BFF0155DE877001FD6CF /* J1Memo.xcdatamodeld */; };
+		F9E3F7D71426357700D4122F /* J1GroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E3F7D61426357700D4122F /* J1GroupManager.m */; };
+		F9E3F7DA1426DF5E00D4122F /* GroupEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E3F7D91426DF5E00D4122F /* GroupEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,30 +58,73 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F92095E8160DF1F600295AB8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F924043E1699059900B813BC /* J1Memo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = J1Memo.entitlements; sourceTree = "<group>"; };
+		F9A6939E1426FB9A00D62412 /* GroupEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupEditViewController.xib; sourceTree = "<group>"; };
+		F9C39E401478966B002F975C /* J1TextSearchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = J1TextSearchDelegate.h; sourceTree = "<group>"; };
+		F9C3C777145B9F0500D1C508 /* J1TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = J1TextViewController.h; sourceTree = "<group>"; };
+		F9C3C778145B9F0500D1C508 /* J1TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = J1TextViewController.m; sourceTree = "<group>"; };
+		F9C3C779145B9F0500D1C508 /* J1TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = J1TextViewController.xib; sourceTree = "<group>"; };
+		F9C670D814210EF500155C4B /* J1CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = J1CoreDataManager.h; sourceTree = "<group>"; };
+		F9C670DA14210F0300155C4B /* J1CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = J1CoreDataManager.m; sourceTree = "<group>"; };
+		F9C670DC142112C200155C4B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F9C670DD142112D600155C4B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F9D71B361453177000D8073E /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		F9D71B3814531A9B00D8073E /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		F9D71B3914531A9B00D8073E /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		F9DBCB50141C6E050099D089 /* J1Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = J1Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DBCB54141C6E050099D089 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9DBCB56141C6E050099D089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F9DBCB58141C6E050099D089 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F9DBCB5A141C6E050099D089 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		F9DBCB5E141C6E050099D089 /* J1Memo-Info.plist */ = {isa = PBXFileReference; path = "J1Memo-Info.plist"; sourceTree = "<group>"; };
+		F9DBCB5E141C6E050099D089 /* J1Memo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "J1Memo-Info.plist"; sourceTree = "<group>"; };
 		F9DBCB60141C6E050099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9DBCB62141C6E050099D089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F9DBCB64141C6E050099D089 /* J1Memo-Prefix.pch */ = {isa = PBXFileReference; path = "J1Memo-Prefix.pch"; sourceTree = "<group>"; };
-		F9DBCB65141C6E050099D089 /* J1AppDelegate.h */ = {isa = PBXFileReference; path = J1AppDelegate.h; sourceTree = "<group>"; };
+		F9DBCB64141C6E050099D089 /* J1Memo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "J1Memo-Prefix.pch"; sourceTree = "<group>"; };
+		F9DBCB65141C6E050099D089 /* J1AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = J1AppDelegate.h; sourceTree = "<group>"; };
 		F9DBCB66141C6E050099D089 /* J1AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1AppDelegate.m; sourceTree = "<group>"; };
-		F9DBCB69141C6E050099D089 /* J1Memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = J1Memo.xcdatamodel; sourceTree = "<group>"; };
-		F9DBCB6B141C6E050099D089 /* J1MasterViewController.h */ = {isa = PBXFileReference; path = J1MasterViewController.h; sourceTree = "<group>"; };
-		F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1MasterViewController.m; sourceTree = "<group>"; };
-		F9DBCB6E141C6E050099D089 /* J1DetailViewController.h */ = {isa = PBXFileReference; path = J1DetailViewController.h; sourceTree = "<group>"; };
-		F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1DetailViewController.m; sourceTree = "<group>"; };
+		F9DBCB6B141C6E050099D089 /* J1MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = J1MasterViewController.h; path = ../J1MasterViewController.h; sourceTree = "<group>"; };
+		F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = J1MasterViewController.m; path = ../J1MasterViewController.m; sourceTree = "<group>"; };
+		F9DBCB6E141C6E050099D089 /* J1DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = J1DetailViewController.h; path = ../J1DetailViewController.h; sourceTree = "<group>"; };
+		F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = J1DetailViewController.m; path = ../J1DetailViewController.m; sourceTree = "<group>"; };
 		F9DBCB72141C6E050099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		F9DBCB75141C6E050099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F9DBCB7C141C6E050099D089 /* J1MemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = J1MemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DBCB7D141C6E050099D089 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F9DBCB86141C6E060099D089 /* J1MemoTests-Info.plist */ = {isa = PBXFileReference; path = "J1MemoTests-Info.plist"; sourceTree = "<group>"; };
+		F9DBCB86141C6E060099D089 /* J1MemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "J1MemoTests-Info.plist"; sourceTree = "<group>"; };
 		F9DBCB88141C6E060099D089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F9DBCB8A141C6E060099D089 /* J1MemoTests.h */ = {isa = PBXFileReference; path = J1MemoTests.h; sourceTree = "<group>"; };
+		F9DBCB8A141C6E060099D089 /* J1MemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = J1MemoTests.h; sourceTree = "<group>"; };
 		F9DBCB8B141C6E060099D089 /* J1MemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J1MemoTests.m; sourceTree = "<group>"; };
+		F9DBCB9B141C70810099D089 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Controller/Group.m; sourceTree = "<group>"; };
+		F9DBCB9C141C70810099D089 /* J1MemoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = J1MemoManager.h; path = Controller/J1MemoManager.h; sourceTree = "<group>"; };
+		F9DBCB9D141C70810099D089 /* J1MemoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = J1MemoManager.m; path = Controller/J1MemoManager.m; sourceTree = "<group>"; usesTabs = 0; };
+		F9DBCB9E141C70810099D089 /* Memo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Memo.h; path = Controller/Memo.h; sourceTree = "<group>"; };
+		F9DBCB9F141C70810099D089 /* Memo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Memo.m; path = Controller/Memo.m; sourceTree = "<group>"; };
+		F9DBCBA5141C70D50099D089 /* EditViewController-old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EditViewController-old.h"; sourceTree = "<group>"; };
+		F9DBCBA6141C70D50099D089 /* EditViewController-old.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditViewController-old.m"; sourceTree = "<group>"; };
+		F9DBCBA7141C70D50099D089 /* EditViewController-old.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "EditViewController-old.xib"; sourceTree = "<group>"; };
+		F9DBCBA8141C70D50099D089 /* J1ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = J1ScrollViewController.h; sourceTree = "<group>"; };
+		F9DBCBA9141C70D50099D089 /* J1ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = J1ScrollViewController.m; sourceTree = "<group>"; };
+		F9DBCBAA141C70D50099D089 /* J1ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = J1ScrollViewController.xib; sourceTree = "<group>"; };
+		F9DBCBAB141C70D50099D089 /* J1TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = J1TextView.h; sourceTree = "<group>"; };
+		F9DBCBAC141C70D50099D089 /* J1TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = J1TextView.m; sourceTree = "<group>"; };
+		F9DBCBAD141C70D50099D089 /* MemoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoListViewController.h; sourceTree = "<group>"; };
+		F9DBCBAE141C70D50099D089 /* MemoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoListViewController.m; sourceTree = "<group>"; };
+		F9DBCBAF141C70D50099D089 /* MemoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemoListViewController.xib; sourceTree = "<group>"; };
+		F9DBCBB0141C70D50099D089 /* MemoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoManagerDelegate.h; sourceTree = "<group>"; };
+		F9DBCBB1141C70D50099D089 /* OrganizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizeViewController.h; sourceTree = "<group>"; };
+		F9DBCBB2141C70D50099D089 /* OrganizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizeViewController.m; sourceTree = "<group>"; };
+		F9DBCBB3141C70D50099D089 /* OrganizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrganizeViewController.xib; sourceTree = "<group>"; };
+		F9DBCBB4141C70D50099D089 /* PropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyViewController.h; sourceTree = "<group>"; };
+		F9DBCBB5141C70D50099D089 /* PropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyViewController.m; sourceTree = "<group>"; };
+		F9DC793E1436BEAF000A2C60 /* PropertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyViewController.xib; sourceTree = "<group>"; };
+		F9DF62D414F0EB5B00393179 /* TestText.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestText.txt; path = J1Memo/TestText.txt; sourceTree = SOURCE_ROOT; };
+		F9E2BFF1155DE877001FD6CF /* J1Memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = J1Memo.xcdatamodel; sourceTree = "<group>"; };
+		F9E2BFF3155DE8BB001FD6CF /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Controller/Group.h; sourceTree = "<group>"; };
+		F9E3F7D51426357700D4122F /* J1GroupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = J1GroupManager.h; path = Controller/J1GroupManager.h; sourceTree = "<group>"; };
+		F9E3F7D61426357700D4122F /* J1GroupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = J1GroupManager.m; path = Controller/J1GroupManager.m; sourceTree = "<group>"; };
+		F9E3F7D81426DF5E00D4122F /* GroupEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupEditViewController.h; sourceTree = "<group>"; };
+		F9E3F7D91426DF5E00D4122F /* GroupEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +156,7 @@
 		F9DBCB45141C6E050099D089 = {
 			isa = PBXGroup;
 			children = (
+				F92095E8160DF1F600295AB8 /* Default-568h@2x.png */,
 				F9DBCB5C141C6E050099D089 /* J1Memo */,
 				F9DBCB84141C6E060099D089 /* J1MemoTests */,
 				F9DBCB53141C6E050099D089 /* Frameworks */,
@@ -124,15 +188,25 @@
 		F9DBCB5C141C6E050099D089 /* J1Memo */ = {
 			isa = PBXGroup;
 			children = (
+				F924043E1699059900B813BC /* J1Memo.entitlements */,
+				F9DF62D414F0EB5B00393179 /* TestText.txt */,
+				F9DFA7A114271B260007F106 /* old */,
+				F9E2BFEF155DE85F001FD6CF /* Model */,
+				F9E2BFF0155DE877001FD6CF /* J1Memo.xcdatamodeld */,
+				F9E2BFF3155DE8BB001FD6CF /* Group.h */,
+				F9DBCB9B141C70810099D089 /* Group.m */,
+				F9DBCB9C141C70810099D089 /* J1MemoManager.h */,
+				F9DBCB9D141C70810099D089 /* J1MemoManager.m */,
+				F9E3F7D51426357700D4122F /* J1GroupManager.h */,
+				F9E3F7D61426357700D4122F /* J1GroupManager.m */,
+				F9DBCB9E141C70810099D089 /* Memo.h */,
+				F9DBCB9F141C70810099D089 /* Memo.m */,
+				F9C670D814210EF500155C4B /* J1CoreDataManager.h */,
+				F9C670DA14210F0300155C4B /* J1CoreDataManager.m */,
+				F9DBCBA4141C70D50099D089 /* View */,
+				F9DBCB99141C70040099D089 /* Controller */,
 				F9DBCB65141C6E050099D089 /* J1AppDelegate.h */,
 				F9DBCB66141C6E050099D089 /* J1AppDelegate.m */,
-				F9DBCB6B141C6E050099D089 /* J1MasterViewController.h */,
-				F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */,
-				F9DBCB6E141C6E050099D089 /* J1DetailViewController.h */,
-				F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */,
-				F9DBCB71141C6E050099D089 /* MainStoryboard_iPhone.storyboard */,
-				F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */,
-				F9DBCB68141C6E050099D089 /* J1Memo.xcdatamodeld */,
 				F9DBCB5D141C6E050099D089 /* Supporting Files */,
 			);
 			path = J1Memo;
@@ -166,6 +240,71 @@
 				F9DBCB87141C6E060099D089 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9DBCB99141C70040099D089 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9DBCBA4141C70D50099D089 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9E3F7D81426DF5E00D4122F /* GroupEditViewController.h */,
+				F9E3F7D91426DF5E00D4122F /* GroupEditViewController.m */,
+				F9A6939E1426FB9A00D62412 /* GroupEditViewController.xib */,
+				F9D71B3814531A9B00D8073E /* EditViewController.h */,
+				F9D71B3914531A9B00D8073E /* EditViewController.m */,
+				F9D71B361453177000D8073E /* EditViewController.xib */,
+				F9C3C777145B9F0500D1C508 /* J1TextViewController.h */,
+				F9C3C778145B9F0500D1C508 /* J1TextViewController.m */,
+				F9C3C779145B9F0500D1C508 /* J1TextViewController.xib */,
+				F9C39E401478966B002F975C /* J1TextSearchDelegate.h */,
+				F9DBCBAB141C70D50099D089 /* J1TextView.h */,
+				F9DBCBAC141C70D50099D089 /* J1TextView.m */,
+				F9DBCBAD141C70D50099D089 /* MemoListViewController.h */,
+				F9DBCBAE141C70D50099D089 /* MemoListViewController.m */,
+				F9DBCBB0141C70D50099D089 /* MemoManagerDelegate.h */,
+				F9DBCB6B141C6E050099D089 /* J1MasterViewController.h */,
+				F9DBCB6C141C6E050099D089 /* J1MasterViewController.m */,
+				F9DBCBB1141C70D50099D089 /* OrganizeViewController.h */,
+				F9DBCBB2141C70D50099D089 /* OrganizeViewController.m */,
+				F9DBCBB3141C70D50099D089 /* OrganizeViewController.xib */,
+				F9DBCBB4141C70D50099D089 /* PropertyViewController.h */,
+				F9DBCBB5141C70D50099D089 /* PropertyViewController.m */,
+				F9DC793E1436BEAF000A2C60 /* PropertyViewController.xib */,
+				F9DBCB71141C6E050099D089 /* MainStoryboard_iPhone.storyboard */,
+				F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9DFA7A114271B260007F106 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBCB6E141C6E050099D089 /* J1DetailViewController.h */,
+				F9DBCB6F141C6E050099D089 /* J1DetailViewController.m */,
+				F9DBCBA5141C70D50099D089 /* EditViewController-old.h */,
+				F9DBCBA6141C70D50099D089 /* EditViewController-old.m */,
+				F9DBCBA7141C70D50099D089 /* EditViewController-old.xib */,
+				F9DBCBA8141C70D50099D089 /* J1ScrollViewController.h */,
+				F9DBCBA9141C70D50099D089 /* J1ScrollViewController.m */,
+				F9DBCBAA141C70D50099D089 /* J1ScrollViewController.xib */,
+				F9C670DC142112C200155C4B /* RootViewController.h */,
+				F9C670DD142112D600155C4B /* RootViewController.m */,
+				F9DBCBAF141C70D50099D089 /* MemoListViewController.xib */,
+			);
+			name = old;
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9E2BFEF155DE85F001FD6CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +352,7 @@
 		F9DBCB47141C6E050099D089 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = F9DBCB4A141C6E050099D089 /* Build configuration list for PBXProject "J1Memo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -241,6 +380,14 @@
 				F9DBCB61141C6E050099D089 /* InfoPlist.strings in Resources */,
 				F9DBCB73141C6E050099D089 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9DBCB76141C6E050099D089 /* MainStoryboard_iPad.storyboard in Resources */,
+				F9DBCBBD141C70D50099D089 /* MemoListViewController.xib in Resources */,
+				F9DBCBBF141C70D50099D089 /* OrganizeViewController.xib in Resources */,
+				F9A6939F1426FB9A00D62412 /* GroupEditViewController.xib in Resources */,
+				F9DC793F1436BEAF000A2C60 /* PropertyViewController.xib in Resources */,
+				F9C3C77B145B9F0500D1C508 /* J1TextViewController.xib in Resources */,
+				F9C3688F145C4BD6002C2FBE /* EditViewController.xib in Resources */,
+				F92095E9160DF1F600295AB8 /* Default-568h@2x.png in Resources */,
+				F924043F1699059900B813BC /* J1Memo.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DBCB89141C6E060099D089 /* InfoPlist.strings in Resources */,
+				F92404401699059900B813BC /* J1Memo.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,9 +425,20 @@
 			files = (
 				F9DBCB63141C6E050099D089 /* main.m in Sources */,
 				F9DBCB67141C6E050099D089 /* J1AppDelegate.m in Sources */,
-				F9DBCB6A141C6E050099D089 /* J1Memo.xcdatamodeld in Sources */,
 				F9DBCB6D141C6E050099D089 /* J1MasterViewController.m in Sources */,
-				F9DBCB70141C6E050099D089 /* J1DetailViewController.m in Sources */,
+				F9DBCBA0141C70810099D089 /* Group.m in Sources */,
+				F9DBCBA1141C70810099D089 /* J1MemoManager.m in Sources */,
+				F9DBCBA2141C70810099D089 /* Memo.m in Sources */,
+				F9DBCBBB141C70D50099D089 /* J1TextView.m in Sources */,
+				F9DBCBBC141C70D50099D089 /* MemoListViewController.m in Sources */,
+				F9DBCBBE141C70D50099D089 /* OrganizeViewController.m in Sources */,
+				F9DBCBC0141C70D50099D089 /* PropertyViewController.m in Sources */,
+				F9C670DB14210F0300155C4B /* J1CoreDataManager.m in Sources */,
+				F9E3F7D71426357700D4122F /* J1GroupManager.m in Sources */,
+				F9E3F7DA1426DF5E00D4122F /* GroupEditViewController.m in Sources */,
+				F9D71B3A14531A9B00D8073E /* EditViewController.m in Sources */,
+				F9C3C77A145B9F0500D1C508 /* J1TextViewController.m in Sources */,
+				F9E2BFF2155DE877001FD6CF /* J1Memo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +475,7 @@
 				F9DBCB72141C6E050099D089 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F9DBCB74141C6E050099D089 /* MainStoryboard_iPad.storyboard */ = {
@@ -324,6 +484,7 @@
 				F9DBCB75141C6E050099D089 /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F9DBCB87141C6E060099D089 /* InfoPlist.strings */ = {
@@ -343,6 +504,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -357,7 +519,9 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -369,6 +533,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -376,8 +541,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -387,10 +554,19 @@
 		F9DBCB90141C6E060099D089 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = J1Memo/J1Memo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "J1Memo/J1Memo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -398,10 +574,19 @@
 		F9DBCB91141C6E060099D089 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = J1Memo/J1Memo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "J1Memo/J1Memo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -410,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/J1Memo.app/J1Memo";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Junichiro Oku (3662B6E286)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -417,7 +603,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
 				INFOPLIST_FILE = "J1MemoTests/J1MemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "79589669-C3E3-45B9-8F9A-918CCB6B5235";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -427,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/J1Memo.app/J1Memo";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Junichiro Oku (3662B6E286)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -434,7 +623,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J1Memo/J1Memo-Prefix.pch";
 				INFOPLIST_FILE = "J1MemoTests/J1MemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "79589669-C3E3-45B9-8F9A-918CCB6B5235";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -459,6 +650,7 @@
 				F9DBCB91141C6E060099D089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9DBCB92141C6E060099D089 /* Build configuration list for PBXNativeTarget "J1MemoTests" */ = {
 			isa = XCConfigurationList;
@@ -467,17 +659,19 @@
 				F9DBCB94141C6E060099D089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F9DBCB68141C6E050099D089 /* J1Memo.xcdatamodeld */ = {
+		F9E2BFF0155DE877001FD6CF /* J1Memo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F9DBCB69141C6E050099D089 /* J1Memo.xcdatamodel */,
+				F9E2BFF1155DE877001FD6CF /* J1Memo.xcdatamodel */,
 			);
-			currentVersion = F9DBCB69141C6E050099D089 /* J1Memo.xcdatamodel */;
-			path = J1Memo.xcdatamodeld;
+			currentVersion = F9E2BFF1155DE877001FD6CF /* J1Memo.xcdatamodel */;
+			name = J1Memo.xcdatamodeld;
+			path = Model/J1Memo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
