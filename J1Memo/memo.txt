@@ -1,0 +1,82 @@
+#0	0x00007353 in -[J1TextView setEditable:] at /Users/jun1ro1/Documents/Development/J1Memo/J1Memo/View/J1TextView.m:40
+#1	0x00167795 in -[UITextView setSelectedRange:] ()
+#2	0x0001ee4f in -[J1TextViewController selectRange:] at /Users/jun1ro1/Documents/Development/J1Memo/J1Memo/View/J1TextViewController.m:138
+#3	0x0001fd8c in -[J1TextViewController searchTextForward:] at /Users/jun1ro1/Documents/Development/J1Memo/J1Memo/View/J1TextViewController.m:258
+#4	0x0001db4f in -[EditViewController forwardSearch:] at /Users/jun1ro1/Documents/Development/J1Memo/J1Memo/View/EditViewController.m:992
+#5	0x0001d5fd in -[EditViewController searchBarSearchButtonClicked:] at /Users/jun1ro1/Documents/Development/J1Memo/J1Memo/View/EditViewController.m:947
+#6	0x0028833d in -[UISearchBar(UISearchBarStatic) _searchFieldReturnPressed] ()
+#7	0x017cce99 in -[NSObject performSelector:withObject:withObject:] ()
+#8	0x000520a1 in -[UIApplication sendAction:fromSender:toTarget:forEvent:] ()
+#9	0x000f9697 in -[UIControl(Deprecated) sendAction:toTarget:forEvent:] ()
+#10	0x000f8d86 in -[UIControl(Internal) _sendActionsForEventMask:withEvent:] ()
+#11	0x0011279a in -[UIFieldEditor webView:shouldInsertText:replacingDOMRange:givenAction:] ()
+#12	0x017314ed in __invoking___ ()
+#13	0x01731407 in -[NSInvocation invoke] ()
+#14	0x0175c46a in -[NSInvocation invokeWithTarget:] ()
+#15	0x024bda54 in -[_WebSafeForwarder forwardInvocation:] ()
+#16	0x01732099 in ___forwarding___ ()
+#17	0x01731cb2 in _CF_forwarding_prep_0 ()
+#18	0x024686d0 in WebEditorClient::shouldInsertText(WTF::String const&, WebCore::Range*, WebCore::EditorInsertAction) ()
+#19	0x028379fa in WebCore::Editor::insertParagraphSeparator() ()
+#20	0x02840c55 in WebCore::Editor::handleTextEvent(WebCore::TextEvent*) ()
+#21	0x02854f52 in WebCore::EventHandler::defaultTextInputEventHandler(WebCore::TextEvent*) ()
+#22	0x02dbb137 in WebCore::Node::defaultEventHandler(WebCore::Event*) ()
+#23	0x02853385 in WebCore::EventDispatcher::dispatchEvent(WTF::PassRefPtr<WebCore::Event>) ()
+#24	0x02852332 in WebCore::EventDispatchMediator::dispatchEvent(WebCore::EventDispatcher*) const ()
+#25	0x02852a3b in WebCore::EventDispatcher::dispatchEvent(WebCore::Node*, WebCore::EventDispatchMediator const&) ()
+#26	0x02dbace4 in WebCore::Node::dispatchEvent(WTF::PassRefPtr<WebCore::Event>) ()
+#27	0x0286778e in WebCore::EventTarget::dispatchEvent(WTF::PassRefPtr<WebCore::Event>, int&) ()
+#28	0x028551e0 in WebCore::EventHandler::handleTextInputEvent(WTF::String const&, WebCore::Event*, WebCore::TextEventInputType) ()
+#29	0x02837b4a in WebCore::Editor::insertText(WTF::String const&, WebCore::Event*) ()
+#30	0x02499989 in -[WebHTMLView(WebNSTextInputSupport) insertText:] ()
+#31	0x017cce42 in -[NSObject performSelector:withObject:] ()
+#32	0x030647bc in -[WAKResponder tryToPerform:with:] ()
+#33	0x024c07a9 in -[WebView(WebViewEditingActions) _performResponderOperation:with:] ()
+#34	0x024c282f in -[WebView(WebViewEditingActions) insertText:] ()
+#35	0x001f2423 in -[UIWebDocumentView insertText:] ()
+#36	0x001b5c39 in -[UIKeyboardImpl insertText:] ()
+#37	0x001b66c1 in -[UIKeyboardImpl addInputString:fromVariantKey:] ()
+#38	0x001b5b48 in -[UIKeyboardImpl handleStringInput:fromVariantKey:] ()
+#39	0x001bf42b in -[UIKeyboardImpl handleKeyEvent:] ()
+#40	0x0005de46 in -[UIApplication _handleKeyEvent:] ()
+#41	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#42	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#43	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#44	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#45	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#46	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#47	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#48	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#49	0x0013dafa in -[UIResponder(Internal) _handleKeyEvent:] ()
+#50	0x0005dea0 in -[UIApplication handleKeyEvent:] ()
+#51	0x0005db05 in -[UIApplication handleEvent:withNewEvent:] ()
+#52	0x0005dc38 in -[UIApplication sendEvent:] ()
+#53	0x00051634 in _UIApplicationHandleEvent ()
+#54	0x016b5ef5 in PurpleEventCallback ()
+#55	0x0179f195 in __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE1_PERFORM_FUNCTION__ ()
+#56	0x01703ff2 in __CFRunLoopDoSource1 ()
+#57	0x017028da in __CFRunLoopRun ()
+#58	0x01701d84 in CFRunLoopRunSpecific ()
+#59	0x01701c9b in CFRunLoopRunInMode ()
+#60	0x016b47d8 in GSEventRunModal ()
+#61	0x016b488a in GSEventRun ()
+#62	0x0004f626 in UIApplicationMain ()
+#63	0x0000209d in main at /Users/jun1ro1/Documents/Development/J1Memo/J1Memo/main.m:16
+
+
+- (void)selectRange:(NSRange)range
+{
+    [textView_ resignFirstResponder];
+    
+    [textView_ scrollRangeToVisible:range];
+    
+    // Prevent a keyboard appearing
+    textView_.editable = self.editing;
+    
+    // Tips: http://stackoverflow.com/questions/1708608/uitextview-selectedrange-not-displaying-when-set-programatically
+    [textView_ select:self];
+    textView_.selectedRange = range; <<<<
+    
+    // Prevent to enter an editing mode when the method "selectedRange" is called
+//    textView_.editable = self.editing;
+}
